@@ -20,6 +20,11 @@ public class penduloSpingScript : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+        position();
+    }
+
+    private void position()
+    {
         lr.SetPosition(0, lineStart.position);
         lr.SetPosition(1, lineEnd.position);
     }
