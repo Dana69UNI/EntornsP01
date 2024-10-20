@@ -15,7 +15,7 @@ public class Jumper : MonoBehaviour
     {
  
     }
-    void onJump()
+    void OnJump()
     {
         Debug.Log("jumped");
     }
