@@ -1193,7 +1193,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   rb: {fileID: 889073774}
-  moveSpeed: 7
+  moveSpeed: 5
+  walkingSpeed: 5
+  sprintSpeed: 10
   move: {fileID: 938900882360627895, guid: 3d3f9274da97f2e409fa6a5c4f6aa656, type: 3}
 --- !u!114 &889073773
 MonoBehaviour:
