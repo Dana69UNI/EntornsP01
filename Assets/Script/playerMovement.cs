@@ -22,9 +22,9 @@ public class playerMovement : MonoBehaviour
     }
     private void FixedUpdate()
     {
-        onMove();
+        OnMove();
     }
-    private void onMove()
+    private void OnMove()
     {
         rb.velocity = new Vector3(x: _moveDirection.x * moveSpeed, y: rb.velocity.y, z: _moveDirection.y * moveSpeed);
 
@@ -38,4 +38,15 @@ public class playerMovement : MonoBehaviour
         moveSpeed = walkingSpeed;
     }
 
+    public void OnJumpPress()
+    {
+        rb.velocity = new Vector3(x: 0, y: 10f * 0.8f , z: 0);
+    }
+
+    public void OnJumpRelease()
+    {
+        rb.velocity = new Vector3(x: 0, y: 0, z: 0);
+    }
+
 }
+               

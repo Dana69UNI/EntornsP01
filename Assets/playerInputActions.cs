@@ -55,9 +55,18 @@ public partial class @PlayerInputActions: IInputActionCollection2, IDisposable
                     ""initialStateCheck"": true
                 },
                 {
-                    ""name"": ""Jump"",
+                    ""name"": ""JumpPress"",
                     ""type"": ""Button"",
                     ""id"": ""8c64762e-d3a7-4427-ad26-20271e7de96b"",
+                    ""expectedControlType"": ""Button"",
+                    ""processors"": """",
+                    ""interactions"": """",
+                    ""initialStateCheck"": false
+                },
+                {
+                    ""name"": ""JumpRelease"",
+                    ""type"": ""Button"",
+                    ""id"": ""48372691-b34a-4bf2-b2a5-e73a99eedecc"",
                     ""expectedControlType"": ""Button"",
                     ""processors"": """",
                     ""interactions"": """",
@@ -256,10 +265,10 @@ public partial class @PlayerInputActions: IInputActionCollection2, IDisposable
                     ""name"": """",
                     ""id"": ""3938015d-dfdf-489d-aa31-cc851aff579b"",
                     ""path"": ""<Keyboard>/space"",
-                    ""interactions"": """",
+                    ""interactions"": ""Press(pressPoint=1.401298E-45)"",
                     ""processors"": """",
                     ""groups"": """",
-                    ""action"": ""Jump"",
+                    ""action"": ""JumpPress"",
                     ""isComposite"": false,
                     ""isPartOfComposite"": false
                 },
@@ -267,10 +276,10 @@ public partial class @PlayerInputActions: IInputActionCollection2, IDisposable
                     ""name"": """",
                     ""id"": ""8b37752a-4417-4e9d-9a6c-6413e4ef1109"",
                     ""path"": ""<Gamepad>/buttonSouth"",
-                    ""interactions"": """",
+                    ""interactions"": ""Press(pressPoint=1.401298E-45)"",
                     ""processors"": """",
                     ""groups"": """",
-                    ""action"": ""Jump"",
+                    ""action"": ""JumpPress"",
                     ""isComposite"": false,
                     ""isPartOfComposite"": false
                 },
@@ -295,6 +304,28 @@ public partial class @PlayerInputActions: IInputActionCollection2, IDisposable
                     ""action"": ""SprintEnd"",
                     ""isComposite"": false,
                     ""isPartOfComposite"": false
+                },
+                {
+                    ""name"": """",
+                    ""id"": ""6e64586f-f3d1-41a7-9af4-493bffc8e75e"",
+                    ""path"": ""<Keyboard>/space"",
+                    ""interactions"": ""Press(pressPoint=1.401298E-45,behavior=1)"",
+                    ""processors"": """",
+                    ""groups"": """",
+                    ""action"": ""JumpRelease"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": false
+                },
+                {
+                    ""name"": """",
+                    ""id"": ""01567c77-ddf9-4e98-bcb2-2d9a0953b023"",
+                    ""path"": ""<Gamepad>/buttonSouth"",
+                    ""interactions"": ""Press(pressPoint=1.401298E-45,behavior=1)"",
+                    ""processors"": """",
+                    ""groups"": """",
+                    ""action"": ""JumpRelease"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": false
                 }
             ]
         }
@@ -306,7 +337,8 @@ public partial class @PlayerInputActions: IInputActionCollection2, IDisposable
         m_Player_Movement = m_Player.FindAction("Movement", throwIfNotFound: true);
         m_Player_SprintStart = m_Player.FindAction("SprintStart", throwIfNotFound: true);
         m_Player_SprintEnd = m_Player.FindAction("SprintEnd", throwIfNotFound: true);
-        m_Player_Jump = m_Player.FindAction("Jump", throwIfNotFound: true);
+        m_Player_JumpPress = m_Player.FindAction("JumpPress", throwIfNotFound: true);
+        m_Player_JumpRelease = m_Player.FindAction("JumpRelease", throwIfNotFound: true);
     }
 
     public void Dispose()
@@ -371,7 +403,8 @@ public partial class @PlayerInputActions: IInputActionCollection2, IDisposable
     private readonly InputAction m_Player_Movement;
     private readonly InputAction m_Player_SprintStart;
     private readonly InputAction m_Player_SprintEnd;
-    private readonly InputAction m_Player_Jump;
+    private readonly InputAction m_Player_JumpPress;
+    private readonly InputAction m_Player_JumpRelease;
     public struct PlayerActions
     {
         private @PlayerInputActions m_Wrapper;
@@ -379,7 +412,8 @@ public partial class @PlayerInputActions: IInputActionCollection2, IDisposable
         public InputAction @Movement => m_Wrapper.m_Player_Movement;
         public InputAction @SprintStart => m_Wrapper.m_Player_SprintStart;
         public InputAction @SprintEnd => m_Wrapper.m_Player_SprintEnd;
-        public InputAction @Jump => m_Wrapper.m_Player_Jump;
+        public InputAction @JumpPress => m_Wrapper.m_Player_JumpPress;
+        public InputAction @JumpRelease => m_Wrapper.m_Player_JumpRelease;
         public InputActionMap Get() { return m_Wrapper.m_Player; }
         public void Enable() { Get().Enable(); }
         public void Disable() { Get().Disable(); }
@@ -398,9 +432,12 @@ public partial class @PlayerInputActions: IInputActionCollection2, IDisposable
             @SprintEnd.started += instance.OnSprintEnd;
             @SprintEnd.performed += instance.OnSprintEnd;
             @SprintEnd.canceled += instance.OnSprintEnd;
-            @Jump.started += instance.OnJump;
-            @Jump.performed += instance.OnJump;
-            @Jump.canceled += instance.OnJump;
+            @JumpPress.started += instance.OnJumpPress;
+            @JumpPress.performed += instance.OnJumpPress;
+            @JumpPress.canceled += instance.OnJumpPress;
+            @JumpRelease.started += instance.OnJumpRelease;
+            @JumpRelease.performed += instance.OnJumpRelease;
+            @JumpRelease.canceled += instance.OnJumpRelease;
         }
 
         private void UnregisterCallbacks(IPlayerActions instance)
@@ -414,9 +451,12 @@ public partial class @PlayerInputActions: IInputActionCollection2, IDisposable
             @SprintEnd.started -= instance.OnSprintEnd;
             @SprintEnd.performed -= instance.OnSprintEnd;
             @SprintEnd.canceled -= instance.OnSprintEnd;
-            @Jump.started -= instance.OnJump;
-            @Jump.performed -= instance.OnJump;
-            @Jump.canceled -= instance.OnJump;
+            @JumpPress.started -= instance.OnJumpPress;
+            @JumpPress.performed -= instance.OnJumpPress;
+            @JumpPress.canceled -= instance.OnJumpPress;
+            @JumpRelease.started -= instance.OnJumpRelease;
+            @JumpRelease.performed -= instance.OnJumpRelease;
+            @JumpRelease.canceled -= instance.OnJumpRelease;
         }
 
         public void RemoveCallbacks(IPlayerActions instance)
@@ -439,6 +479,7 @@ public partial class @PlayerInputActions: IInputActionCollection2, IDisposable
         void OnMovement(InputAction.CallbackContext context);
         void OnSprintStart(InputAction.CallbackContext context);
         void OnSprintEnd(InputAction.CallbackContext context);
-        void OnJump(InputAction.CallbackContext context);
+        void OnJumpPress(InputAction.CallbackContext context);
+        void OnJumpRelease(InputAction.CallbackContext context);
     }
 }

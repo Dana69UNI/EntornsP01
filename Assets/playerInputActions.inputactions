@@ -33,9 +33,18 @@
                     "initialStateCheck": true
                 },
                 {
-                    "name": "Jump",
+                    "name": "JumpPress",
                     "type": "Button",
                     "id": "8c64762e-d3a7-4427-ad26-20271e7de96b",
+                    "expectedControlType": "Button",
+                    "processors": "",
+                    "interactions": "",
+                    "initialStateCheck": false
+                },
+                {
+                    "name": "JumpRelease",
+                    "type": "Button",
+                    "id": "48372691-b34a-4bf2-b2a5-e73a99eedecc",
                     "expectedControlType": "Button",
                     "processors": "",
                     "interactions": "",
@@ -234,10 +243,10 @@
                     "name": "",
                     "id": "3938015d-dfdf-489d-aa31-cc851aff579b",
                     "path": "<Keyboard>/space",
-                    "interactions": "",
+                    "interactions": "Press(pressPoint=1.401298E-45)",
                     "processors": "",
                     "groups": "",
-                    "action": "Jump",
+                    "action": "JumpPress",
                     "isComposite": false,
                     "isPartOfComposite": false
                 },
@@ -245,10 +254,10 @@
                     "name": "",
                     "id": "8b37752a-4417-4e9d-9a6c-6413e4ef1109",
                     "path": "<Gamepad>/buttonSouth",
-                    "interactions": "",
+                    "interactions": "Press(pressPoint=1.401298E-45)",
                     "processors": "",
                     "groups": "",
-                    "action": "Jump",
+                    "action": "JumpPress",
                     "isComposite": false,
                     "isPartOfComposite": false
                 },
@@ -271,6 +280,28 @@
                     "processors": "",
                     "groups": "",
                     "action": "SprintEnd",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                },
+                {
+                    "name": "",
+                    "id": "6e64586f-f3d1-41a7-9af4-493bffc8e75e",
+                    "path": "<Keyboard>/space",
+                    "interactions": "Press(pressPoint=1.401298E-45,behavior=1)",
+                    "processors": "",
+                    "groups": "",
+                    "action": "JumpRelease",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                },
+                {
+                    "name": "",
+                    "id": "01567c77-ddf9-4e98-bcb2-2d9a0953b023",
+                    "path": "<Gamepad>/buttonSouth",
+                    "interactions": "Press(pressPoint=1.401298E-45,behavior=1)",
+                    "processors": "",
+                    "groups": "",
+                    "action": "JumpRelease",
                     "isComposite": false,
                     "isPartOfComposite": false
                 }
