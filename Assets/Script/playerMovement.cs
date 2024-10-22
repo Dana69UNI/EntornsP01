@@ -14,6 +14,7 @@ public class playerMovement : MonoBehaviour
     public InputActionReference move;
     PlayerInputActions inputActions;
     private Vector2 _moveDirection;
+    
 
     private void Update()
     {
@@ -27,7 +28,7 @@ public class playerMovement : MonoBehaviour
     private void OnMove()
     {
         rb.velocity = new Vector3(x: _moveDirection.x * moveSpeed, y: rb.velocity.y, z: _moveDirection.y * moveSpeed);
-
+       
     }
     public void OnSprintStart() //Al haber separado Sprint en Start y end, podemos usar tal cual el OnSprintxxx de funcion y no tener que hacer booleanas ni nada del estilo
     {
@@ -38,15 +39,6 @@ public class playerMovement : MonoBehaviour
         moveSpeed = walkingSpeed;
     }
 
-    public void OnJumpPress()
-    {
-        rb.velocity = new Vector3(x: 0, y: 10f * 0.8f , z: 0);
-    }
-
-    public void OnJumpRelease()
-    {
-        rb.velocity = new Vector3(x: 0, y: 0, z: 0);
-    }
 
 }
                

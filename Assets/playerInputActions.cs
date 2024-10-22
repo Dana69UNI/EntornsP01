@@ -71,6 +71,15 @@ public partial class @PlayerInputActions: IInputActionCollection2, IDisposable
                     ""processors"": """",
                     ""interactions"": """",
                     ""initialStateCheck"": false
+                },
+                {
+                    ""name"": ""CamaraChange"",
+                    ""type"": ""Button"",
+                    ""id"": ""22615056-711a-461a-9e6c-68967a817ec2"",
+                    ""expectedControlType"": ""Button"",
+                    ""processors"": """",
+                    ""interactions"": """",
+                    ""initialStateCheck"": false
                 }
             ],
             ""bindings"": [
@@ -326,6 +335,28 @@ public partial class @PlayerInputActions: IInputActionCollection2, IDisposable
                     ""action"": ""JumpRelease"",
                     ""isComposite"": false,
                     ""isPartOfComposite"": false
+                },
+                {
+                    ""name"": """",
+                    ""id"": ""a52e59fd-59b1-45f4-bb1e-cfbaf96444de"",
+                    ""path"": ""<Mouse>/middleButton"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": """",
+                    ""action"": ""CamaraChange"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": false
+                },
+                {
+                    ""name"": """",
+                    ""id"": ""416c43bf-92cb-47b8-9c03-73daf09d8499"",
+                    ""path"": ""<Gamepad>/rightStickPress"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": """",
+                    ""action"": ""CamaraChange"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": false
                 }
             ]
         }
@@ -339,6 +370,7 @@ public partial class @PlayerInputActions: IInputActionCollection2, IDisposable
         m_Player_SprintEnd = m_Player.FindAction("SprintEnd", throwIfNotFound: true);
         m_Player_JumpPress = m_Player.FindAction("JumpPress", throwIfNotFound: true);
         m_Player_JumpRelease = m_Player.FindAction("JumpRelease", throwIfNotFound: true);
+        m_Player_CamaraChange = m_Player.FindAction("CamaraChange", throwIfNotFound: true);
     }
 
     public void Dispose()
@@ -405,6 +437,7 @@ public partial class @PlayerInputActions: IInputActionCollection2, IDisposable
     private readonly InputAction m_Player_SprintEnd;
     private readonly InputAction m_Player_JumpPress;
     private readonly InputAction m_Player_JumpRelease;
+    private readonly InputAction m_Player_CamaraChange;
     public struct PlayerActions
     {
         private @PlayerInputActions m_Wrapper;
@@ -414,6 +447,7 @@ public partial class @PlayerInputActions: IInputActionCollection2, IDisposable
         public InputAction @SprintEnd => m_Wrapper.m_Player_SprintEnd;
         public InputAction @JumpPress => m_Wrapper.m_Player_JumpPress;
         public InputAction @JumpRelease => m_Wrapper.m_Player_JumpRelease;
+        public InputAction @CamaraChange => m_Wrapper.m_Player_CamaraChange;
         public InputActionMap Get() { return m_Wrapper.m_Player; }
         public void Enable() { Get().Enable(); }
         public void Disable() { Get().Disable(); }
@@ -438,6 +472,9 @@ public partial class @PlayerInputActions: IInputActionCollection2, IDisposable
             @JumpRelease.started += instance.OnJumpRelease;
             @JumpRelease.performed += instance.OnJumpRelease;
             @JumpRelease.canceled += instance.OnJumpRelease;
+            @CamaraChange.started += instance.OnCamaraChange;
+            @CamaraChange.performed += instance.OnCamaraChange;
+            @CamaraChange.canceled += instance.OnCamaraChange;
         }
 
         private void UnregisterCallbacks(IPlayerActions instance)
@@ -457,6 +494,9 @@ public partial class @PlayerInputActions: IInputActionCollection2, IDisposable
             @JumpRelease.started -= instance.OnJumpRelease;
             @JumpRelease.performed -= instance.OnJumpRelease;
             @JumpRelease.canceled -= instance.OnJumpRelease;
+            @CamaraChange.started -= instance.OnCamaraChange;
+            @CamaraChange.performed -= instance.OnCamaraChange;
+            @CamaraChange.canceled -= instance.OnCamaraChange;
         }
 
         public void RemoveCallbacks(IPlayerActions instance)
@@ -481,5 +521,6 @@ public partial class @PlayerInputActions: IInputActionCollection2, IDisposable
         void OnSprintEnd(InputAction.CallbackContext context);
         void OnJumpPress(InputAction.CallbackContext context);
         void OnJumpRelease(InputAction.CallbackContext context);
+        void OnCamaraChange(InputAction.CallbackContext context);
     }
 }

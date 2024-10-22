@@ -4,19 +4,46 @@ using UnityEngine;
 
 public class Jumper : MonoBehaviour
 {
-    // Start is called before the first frame update
-    void Start()
+    public Rigidbody rb;
+    PlayerInputActions inputActions;
+    private bool isGrounded;
+    private float distGround = 1f;
+    public void OnJumpPress()
     {
-        
+        if(isGrounded)
+        {
+            rb.velocity = new Vector3(x: 0, y: 10f, z: 0);
+        }
+       
     }
 
-    // Update is called once per frame
-    void Update()
+    public void OnJumpRelease()
     {
- 
+        if (rb.velocity.y > 0)
+        {
+            rb.velocity = new Vector3(x: 0, y: 0, z: 0);
+        }
+
     }
-    void OnJump()
+
+    private void FixedUpdate()
     {
-        Debug.Log("jumped");
+        Grounded();
     }
+
+    public void Grounded()
+    {
+        if(Physics.Raycast(transform.position, Vector3.down, distGround + 0.1f))
+        {
+            isGrounded = true;
+            
+        }
+        else
+        {
+            isGrounded = false;
+            
+        }
+    }
+
+
 }
