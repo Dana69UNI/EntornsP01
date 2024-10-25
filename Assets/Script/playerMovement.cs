@@ -22,10 +22,10 @@ public class PlayerMovement : MonoBehaviour
 
     private void FixedUpdate()
     {
-        OnMove();
+        OnMovement();
     }
 
-    private void OnMove()
+    private void OnMovement()
     {
      
         Vector3 forward = playerCamera.transform.forward;

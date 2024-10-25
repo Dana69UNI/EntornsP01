@@ -37,6 +37,15 @@ public partial class @PlayerInputActions: IInputActionCollection2, IDisposable
                     ""initialStateCheck"": true
                 },
                 {
+                    ""name"": ""MovementStop"",
+                    ""type"": ""Value"",
+                    ""id"": ""617dfd4a-21c8-4ac2-a989-0d6edf4fde5c"",
+                    ""expectedControlType"": ""Vector2"",
+                    ""processors"": """",
+                    ""interactions"": """",
+                    ""initialStateCheck"": true
+                },
+                {
                     ""name"": ""SprintStart"",
                     ""type"": ""Button"",
                     ""id"": ""ce9ee235-b3c5-4e97-a99f-a379f7e9b4b5"",
@@ -357,6 +366,171 @@ public partial class @PlayerInputActions: IInputActionCollection2, IDisposable
                     ""action"": ""CamaraChange"",
                     ""isComposite"": false,
                     ""isPartOfComposite"": false
+                },
+                {
+                    ""name"": ""WASD"",
+                    ""id"": ""e24ad55d-4e97-4974-b87a-695c943d33cc"",
+                    ""path"": ""2DVector"",
+                    ""interactions"": ""Press(pressPoint=1.401298E-45,behavior=1)"",
+                    ""processors"": """",
+                    ""groups"": """",
+                    ""action"": ""MovementStop"",
+                    ""isComposite"": true,
+                    ""isPartOfComposite"": false
+                },
+                {
+                    ""name"": ""up"",
+                    ""id"": ""d11d03cb-6f74-4a08-9a17-f90ada6ca7c3"",
+                    ""path"": ""<Keyboard>/w"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": """",
+                    ""action"": ""MovementStop"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": true
+                },
+                {
+                    ""name"": ""down"",
+                    ""id"": ""ecb3985a-b5be-479a-bc97-38584c1537a7"",
+                    ""path"": ""<Keyboard>/s"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": """",
+                    ""action"": ""MovementStop"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": true
+                },
+                {
+                    ""name"": ""left"",
+                    ""id"": ""68bf1cff-3c77-48ef-960c-cadb205304f0"",
+                    ""path"": ""<Keyboard>/a"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": """",
+                    ""action"": ""MovementStop"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": true
+                },
+                {
+                    ""name"": ""right"",
+                    ""id"": ""7a52e5f9-0f9b-4c8a-b946-1807f8d93ff5"",
+                    ""path"": ""<Keyboard>/d"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": """",
+                    ""action"": ""MovementStop"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": true
+                },
+                {
+                    ""name"": ""Arrows"",
+                    ""id"": ""a154f826-7461-44e6-87db-3a2a292571d1"",
+                    ""path"": ""2DVector"",
+                    ""interactions"": ""Press(pressPoint=1.401298E-45,behavior=1)"",
+                    ""processors"": """",
+                    ""groups"": """",
+                    ""action"": ""MovementStop"",
+                    ""isComposite"": true,
+                    ""isPartOfComposite"": false
+                },
+                {
+                    ""name"": ""up"",
+                    ""id"": ""607503cd-262c-403d-b5a4-477347ceecde"",
+                    ""path"": ""<Keyboard>/upArrow"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": """",
+                    ""action"": ""MovementStop"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": true
+                },
+                {
+                    ""name"": ""down"",
+                    ""id"": ""4c8d42d2-267a-400e-b0d8-e1c701565271"",
+                    ""path"": ""<Keyboard>/downArrow"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": """",
+                    ""action"": ""MovementStop"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": true
+                },
+                {
+                    ""name"": ""left"",
+                    ""id"": ""53a001aa-beb2-406e-a0b1-a0d56a143c80"",
+                    ""path"": ""<Keyboard>/leftArrow"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": """",
+                    ""action"": ""MovementStop"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": true
+                },
+                {
+                    ""name"": ""right"",
+                    ""id"": ""8103492e-c425-443d-bfd0-39823d9aee91"",
+                    ""path"": ""<Keyboard>/rightArrow"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": """",
+                    ""action"": ""MovementStop"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": true
+                },
+                {
+                    ""name"": ""Mando L3"",
+                    ""id"": ""d38b6612-fc8a-4ae8-a9a0-6f10b6cab661"",
+                    ""path"": ""2DVector(mode=2)"",
+                    ""interactions"": ""Press(pressPoint=1.401298E-45,behavior=1)"",
+                    ""processors"": """",
+                    ""groups"": """",
+                    ""action"": ""MovementStop"",
+                    ""isComposite"": true,
+                    ""isPartOfComposite"": false
+                },
+                {
+                    ""name"": ""up"",
+                    ""id"": ""6110204b-c659-4363-bd15-a043c59250e9"",
+                    ""path"": ""<Gamepad>/leftStick/up"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": """",
+                    ""action"": ""MovementStop"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": true
+                },
+                {
+                    ""name"": ""down"",
+                    ""id"": ""51a02286-717d-4ed1-ba81-5901647c7b44"",
+                    ""path"": ""<Gamepad>/leftStick/down"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": """",
+                    ""action"": ""MovementStop"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": true
+                },
+                {
+                    ""name"": ""left"",
+                    ""id"": ""cef9172d-ac97-4646-9edf-a8047983556a"",
+                    ""path"": ""<Gamepad>/leftStick/left"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": """",
+                    ""action"": ""MovementStop"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": true
+                },
+                {
+                    ""name"": ""right"",
+                    ""id"": ""642fbb33-de65-4dc1-bc9a-ed526b40acd8"",
+                    ""path"": ""<Gamepad>/leftStick/right"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": """",
+                    ""action"": ""MovementStop"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": true
                 }
             ]
         }
@@ -366,6 +540,7 @@ public partial class @PlayerInputActions: IInputActionCollection2, IDisposable
         // Player
         m_Player = asset.FindActionMap("Player", throwIfNotFound: true);
         m_Player_Movement = m_Player.FindAction("Movement", throwIfNotFound: true);
+        m_Player_MovementStop = m_Player.FindAction("MovementStop", throwIfNotFound: true);
         m_Player_SprintStart = m_Player.FindAction("SprintStart", throwIfNotFound: true);
         m_Player_SprintEnd = m_Player.FindAction("SprintEnd", throwIfNotFound: true);
         m_Player_JumpPress = m_Player.FindAction("JumpPress", throwIfNotFound: true);
@@ -433,6 +608,7 @@ public partial class @PlayerInputActions: IInputActionCollection2, IDisposable
     private readonly InputActionMap m_Player;
     private List<IPlayerActions> m_PlayerActionsCallbackInterfaces = new List<IPlayerActions>();
     private readonly InputAction m_Player_Movement;
+    private readonly InputAction m_Player_MovementStop;
     private readonly InputAction m_Player_SprintStart;
     private readonly InputAction m_Player_SprintEnd;
     private readonly InputAction m_Player_JumpPress;
@@ -443,6 +619,7 @@ public partial class @PlayerInputActions: IInputActionCollection2, IDisposable
         private @PlayerInputActions m_Wrapper;
         public PlayerActions(@PlayerInputActions wrapper) { m_Wrapper = wrapper; }
         public InputAction @Movement => m_Wrapper.m_Player_Movement;
+        public InputAction @MovementStop => m_Wrapper.m_Player_MovementStop;
         public InputAction @SprintStart => m_Wrapper.m_Player_SprintStart;
         public InputAction @SprintEnd => m_Wrapper.m_Player_SprintEnd;
         public InputAction @JumpPress => m_Wrapper.m_Player_JumpPress;
@@ -460,6 +637,9 @@ public partial class @PlayerInputActions: IInputActionCollection2, IDisposable
             @Movement.started += instance.OnMovement;
             @Movement.performed += instance.OnMovement;
             @Movement.canceled += instance.OnMovement;
+            @MovementStop.started += instance.OnMovementStop;
+            @MovementStop.performed += instance.OnMovementStop;
+            @MovementStop.canceled += instance.OnMovementStop;
             @SprintStart.started += instance.OnSprintStart;
             @SprintStart.performed += instance.OnSprintStart;
             @SprintStart.canceled += instance.OnSprintStart;
@@ -482,6 +662,9 @@ public partial class @PlayerInputActions: IInputActionCollection2, IDisposable
             @Movement.started -= instance.OnMovement;
             @Movement.performed -= instance.OnMovement;
             @Movement.canceled -= instance.OnMovement;
+            @MovementStop.started -= instance.OnMovementStop;
+            @MovementStop.performed -= instance.OnMovementStop;
+            @MovementStop.canceled -= instance.OnMovementStop;
             @SprintStart.started -= instance.OnSprintStart;
             @SprintStart.performed -= instance.OnSprintStart;
             @SprintStart.canceled -= instance.OnSprintStart;
@@ -517,6 +700,7 @@ public partial class @PlayerInputActions: IInputActionCollection2, IDisposable
     public interface IPlayerActions
     {
         void OnMovement(InputAction.CallbackContext context);
+        void OnMovementStop(InputAction.CallbackContext context);
         void OnSprintStart(InputAction.CallbackContext context);
         void OnSprintEnd(InputAction.CallbackContext context);
         void OnJumpPress(InputAction.CallbackContext context);
