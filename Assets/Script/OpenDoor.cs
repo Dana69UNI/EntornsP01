@@ -13,4 +13,7 @@ public class OpenDoor : MonoBehaviour
     {
         Puerta.Play("close");
     }
+
+   
+
 }
