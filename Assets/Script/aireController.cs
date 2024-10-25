@@ -18,7 +18,7 @@ public class aireController : MonoBehaviour
     {
         if (isFloating)
         {
-            rb.velocity = Vector3.up * 5f;
+            rb.velocity = Vector3.up * 2f;
         }
     }
 
