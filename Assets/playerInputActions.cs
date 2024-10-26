@@ -89,6 +89,42 @@ public partial class @PlayerInputActions: IInputActionCollection2, IDisposable
                     ""processors"": """",
                     ""interactions"": """",
                     ""initialStateCheck"": false
+                },
+                {
+                    ""name"": ""ZoomPress"",
+                    ""type"": ""Button"",
+                    ""id"": ""dbd94d1e-cb8f-4b3c-9ec0-c5f4b17ffdfd"",
+                    ""expectedControlType"": ""Button"",
+                    ""processors"": """",
+                    ""interactions"": """",
+                    ""initialStateCheck"": false
+                },
+                {
+                    ""name"": ""ZoomRelease"",
+                    ""type"": ""Button"",
+                    ""id"": ""2e46c84d-6e8c-452f-81e7-e36acdee800a"",
+                    ""expectedControlType"": ""Button"",
+                    ""processors"": """",
+                    ""interactions"": """",
+                    ""initialStateCheck"": false
+                },
+                {
+                    ""name"": ""WindDirectionRandom"",
+                    ""type"": ""Button"",
+                    ""id"": ""0ad8a140-f8f5-44d1-95ca-989e4184df15"",
+                    ""expectedControlType"": ""Button"",
+                    ""processors"": """",
+                    ""interactions"": """",
+                    ""initialStateCheck"": false
+                },
+                {
+                    ""name"": ""WindDirectionRandomR"",
+                    ""type"": ""Button"",
+                    ""id"": ""846e925b-a9a8-4635-b794-cbfa19c8d0d6"",
+                    ""expectedControlType"": ""Button"",
+                    ""processors"": """",
+                    ""interactions"": """",
+                    ""initialStateCheck"": false
                 }
             ],
             ""bindings"": [
@@ -531,6 +567,94 @@ public partial class @PlayerInputActions: IInputActionCollection2, IDisposable
                     ""action"": ""MovementStop"",
                     ""isComposite"": false,
                     ""isPartOfComposite"": true
+                },
+                {
+                    ""name"": """",
+                    ""id"": ""6434062a-bfdd-4880-b257-4c69c843877c"",
+                    ""path"": ""<Keyboard>/c"",
+                    ""interactions"": ""Press(pressPoint=1.401298E-45)"",
+                    ""processors"": """",
+                    ""groups"": """",
+                    ""action"": ""ZoomPress"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": false
+                },
+                {
+                    ""name"": """",
+                    ""id"": ""f62c1bcf-d512-413d-a8d4-003cfd12fcf0"",
+                    ""path"": ""<Gamepad>/dpad/up"",
+                    ""interactions"": ""Press(pressPoint=1.401298E-45)"",
+                    ""processors"": """",
+                    ""groups"": """",
+                    ""action"": ""ZoomPress"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": false
+                },
+                {
+                    ""name"": """",
+                    ""id"": ""8d3e168f-7cfb-4bbf-8732-151b42594263"",
+                    ""path"": ""<Keyboard>/c"",
+                    ""interactions"": ""Press(pressPoint=1.401298E-45,behavior=1)"",
+                    ""processors"": """",
+                    ""groups"": """",
+                    ""action"": ""ZoomRelease"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": false
+                },
+                {
+                    ""name"": """",
+                    ""id"": ""5e8ca04d-4205-4089-a071-61246d4df9d1"",
+                    ""path"": ""<Gamepad>/dpad/up"",
+                    ""interactions"": ""Press(pressPoint=1.401298E-45,behavior=1)"",
+                    ""processors"": """",
+                    ""groups"": """",
+                    ""action"": ""ZoomRelease"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": false
+                },
+                {
+                    ""name"": """",
+                    ""id"": ""804c9b40-c1f9-4e60-a728-761c39fd3147"",
+                    ""path"": ""<Gamepad>/dpad/down"",
+                    ""interactions"": ""Press"",
+                    ""processors"": """",
+                    ""groups"": """",
+                    ""action"": ""WindDirectionRandom"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": false
+                },
+                {
+                    ""name"": """",
+                    ""id"": ""0fd5482d-ba6e-4cc2-9673-aa2580a6d808"",
+                    ""path"": ""<Keyboard>/k"",
+                    ""interactions"": ""Press"",
+                    ""processors"": """",
+                    ""groups"": """",
+                    ""action"": ""WindDirectionRandom"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": false
+                },
+                {
+                    ""name"": """",
+                    ""id"": ""6d98cd9e-766d-41e9-b636-c66420ad2024"",
+                    ""path"": ""<Gamepad>/dpad/down"",
+                    ""interactions"": ""Press(behavior=1)"",
+                    ""processors"": """",
+                    ""groups"": """",
+                    ""action"": ""WindDirectionRandomR"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": false
+                },
+                {
+                    ""name"": """",
+                    ""id"": ""f0e8a7a0-d11e-4192-bad1-987df97ec7d0"",
+                    ""path"": ""<Keyboard>/k"",
+                    ""interactions"": ""Press(behavior=1)"",
+                    ""processors"": """",
+                    ""groups"": """",
+                    ""action"": ""WindDirectionRandomR"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": false
                 }
             ]
         }
@@ -546,6 +670,10 @@ public partial class @PlayerInputActions: IInputActionCollection2, IDisposable
         m_Player_JumpPress = m_Player.FindAction("JumpPress", throwIfNotFound: true);
         m_Player_JumpRelease = m_Player.FindAction("JumpRelease", throwIfNotFound: true);
         m_Player_CamaraChange = m_Player.FindAction("CamaraChange", throwIfNotFound: true);
+        m_Player_ZoomPress = m_Player.FindAction("ZoomPress", throwIfNotFound: true);
+        m_Player_ZoomRelease = m_Player.FindAction("ZoomRelease", throwIfNotFound: true);
+        m_Player_WindDirectionRandom = m_Player.FindAction("WindDirectionRandom", throwIfNotFound: true);
+        m_Player_WindDirectionRandomR = m_Player.FindAction("WindDirectionRandomR", throwIfNotFound: true);
     }
 
     public void Dispose()
@@ -614,6 +742,10 @@ public partial class @PlayerInputActions: IInputActionCollection2, IDisposable
     private readonly InputAction m_Player_JumpPress;
     private readonly InputAction m_Player_JumpRelease;
     private readonly InputAction m_Player_CamaraChange;
+    private readonly InputAction m_Player_ZoomPress;
+    private readonly InputAction m_Player_ZoomRelease;
+    private readonly InputAction m_Player_WindDirectionRandom;
+    private readonly InputAction m_Player_WindDirectionRandomR;
     public struct PlayerActions
     {
         private @PlayerInputActions m_Wrapper;
@@ -625,6 +757,10 @@ public partial class @PlayerInputActions: IInputActionCollection2, IDisposable
         public InputAction @JumpPress => m_Wrapper.m_Player_JumpPress;
         public InputAction @JumpRelease => m_Wrapper.m_Player_JumpRelease;
         public InputAction @CamaraChange => m_Wrapper.m_Player_CamaraChange;
+        public InputAction @ZoomPress => m_Wrapper.m_Player_ZoomPress;
+        public InputAction @ZoomRelease => m_Wrapper.m_Player_ZoomRelease;
+        public InputAction @WindDirectionRandom => m_Wrapper.m_Player_WindDirectionRandom;
+        public InputAction @WindDirectionRandomR => m_Wrapper.m_Player_WindDirectionRandomR;
         public InputActionMap Get() { return m_Wrapper.m_Player; }
         public void Enable() { Get().Enable(); }
         public void Disable() { Get().Disable(); }
@@ -655,6 +791,18 @@ public partial class @PlayerInputActions: IInputActionCollection2, IDisposable
             @CamaraChange.started += instance.OnCamaraChange;
             @CamaraChange.performed += instance.OnCamaraChange;
             @CamaraChange.canceled += instance.OnCamaraChange;
+            @ZoomPress.started += instance.OnZoomPress;
+            @ZoomPress.performed += instance.OnZoomPress;
+            @ZoomPress.canceled += instance.OnZoomPress;
+            @ZoomRelease.started += instance.OnZoomRelease;
+            @ZoomRelease.performed += instance.OnZoomRelease;
+            @ZoomRelease.canceled += instance.OnZoomRelease;
+            @WindDirectionRandom.started += instance.OnWindDirectionRandom;
+            @WindDirectionRandom.performed += instance.OnWindDirectionRandom;
+            @WindDirectionRandom.canceled += instance.OnWindDirectionRandom;
+            @WindDirectionRandomR.started += instance.OnWindDirectionRandomR;
+            @WindDirectionRandomR.performed += instance.OnWindDirectionRandomR;
+            @WindDirectionRandomR.canceled += instance.OnWindDirectionRandomR;
         }
 
         private void UnregisterCallbacks(IPlayerActions instance)
@@ -680,6 +828,18 @@ public partial class @PlayerInputActions: IInputActionCollection2, IDisposable
             @CamaraChange.started -= instance.OnCamaraChange;
             @CamaraChange.performed -= instance.OnCamaraChange;
             @CamaraChange.canceled -= instance.OnCamaraChange;
+            @ZoomPress.started -= instance.OnZoomPress;
+            @ZoomPress.performed -= instance.OnZoomPress;
+            @ZoomPress.canceled -= instance.OnZoomPress;
+            @ZoomRelease.started -= instance.OnZoomRelease;
+            @ZoomRelease.performed -= instance.OnZoomRelease;
+            @ZoomRelease.canceled -= instance.OnZoomRelease;
+            @WindDirectionRandom.started -= instance.OnWindDirectionRandom;
+            @WindDirectionRandom.performed -= instance.OnWindDirectionRandom;
+            @WindDirectionRandom.canceled -= instance.OnWindDirectionRandom;
+            @WindDirectionRandomR.started -= instance.OnWindDirectionRandomR;
+            @WindDirectionRandomR.performed -= instance.OnWindDirectionRandomR;
+            @WindDirectionRandomR.canceled -= instance.OnWindDirectionRandomR;
         }
 
         public void RemoveCallbacks(IPlayerActions instance)
@@ -706,5 +866,9 @@ public partial class @PlayerInputActions: IInputActionCollection2, IDisposable
         void OnJumpPress(InputAction.CallbackContext context);
         void OnJumpRelease(InputAction.CallbackContext context);
         void OnCamaraChange(InputAction.CallbackContext context);
+        void OnZoomPress(InputAction.CallbackContext context);
+        void OnZoomRelease(InputAction.CallbackContext context);
+        void OnWindDirectionRandom(InputAction.CallbackContext context);
+        void OnWindDirectionRandomR(InputAction.CallbackContext context);
     }
 }

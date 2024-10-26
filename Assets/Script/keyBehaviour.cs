@@ -11,6 +11,7 @@ public class keyBehaviour : MonoBehaviour
         {
             _doorBehaviour.lockStatus();
             Destroy(gameObject);
+            
         }
     }
 }

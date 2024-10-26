@@ -8,6 +8,7 @@ public class animationControl : MonoBehaviour
     // Start is called before the first frame update
     bool _Sprint = false;
     bool _Jump = false;
+  
     void Start()
     {
         _animator = GetComponent<Animator>();
@@ -53,5 +54,14 @@ public class animationControl : MonoBehaviour
     {
         _animator.SetBool("isJumping", false);
 
+    }
+  
+    private void OnWindDirectionRandom()
+    {
+        _animator.SetBool("isAirBending", true);
+    }
+    private void OnWindDirectionRandomR()
+    {
+        _animator.SetBool("isAirBending", false);
     }
 }
