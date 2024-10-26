@@ -13,6 +13,7 @@ public class Jumper : MonoBehaviour
         if(isGrounded)
         {
             rb.velocity = new Vector3(x: 0, y: 6f, z: 0);
+           
         }
        
     }

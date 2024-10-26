@@ -14,7 +14,7 @@ public class PlayerMovement : MonoBehaviour
     public float walkingSpeed = 5.0f;  //Referencia para modificar moveSpeed, así no ponemos un numero arbitrario, sino que ya esta declarado
     public float sprintSpeed = 10.0f;//Referencia para modificar moveSpeed, pa correr
     public InputActionReference move;
-    bool isFPS = false; //Bool para saber si estoy en primera persona o no y manejar el movimiento diferente
+    public bool isFPS = false; //Bool para saber si estoy en primera persona o no y manejar el movimiento diferente
 
     private Vector2 _moveDirection;
 
@@ -45,7 +45,7 @@ public class PlayerMovement : MonoBehaviour
 
             Vector3 moveDirection = (right * _moveDirection.x + forward * _moveDirection.y).normalized;
 
-            if (moveDirection.magnitude > 0.1f)
+            if (moveDirection.magnitude > 0.5f)
             {
                 Quaternion targetRotation = Quaternion.LookRotation(moveDirection);
                 rb.rotation = Quaternion.Slerp(rb.rotation, targetRotation, Time.deltaTime * 30f);
@@ -89,5 +89,13 @@ public class PlayerMovement : MonoBehaviour
     {
         isFPS = !isFPS;
     }
-
+    public void ApplyRotation(float mouseX)
+    {
+        if (isFPS)
+        {
+          
+            rb.MoveRotation(rb.rotation * Quaternion.Euler(0f, mouseX, 0f));  // Rotación solo del jugador en primera persona
+        }
+        
+    }
 }
