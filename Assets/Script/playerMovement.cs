@@ -93,7 +93,7 @@ public class PlayerMovement : MonoBehaviour
     {
         if (isFPS)
         {
-          
+
             rb.MoveRotation(rb.rotation * Quaternion.Euler(0f, mouseX, 0f));  // Rotación solo del jugador en primera persona
         }
         
